@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Add Student
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  		
+		<ion-item>
+		<ion-label position="floating">Rollno: </ion-label>
+			<ion-input placeholder="roll no" [(ngModel)]="student.rollno"></ion-input>
+		</ion-item>
+		<ion-item>
+		<ion-label position="floating">First name: </ion-label>
+			<ion-input placeholder="first name" [(ngModel)]="student.firstName"></ion-input>
+		</ion-item>
+		<ion-item>
+		<ion-label position="floating">Last name: </ion-label>
+			<ion-input placeholder="last name" [(ngModel)]="student.lastName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime display-format="DD/MM/YYYY" [(ngModel)]="student.dob" picker-format="DD MMMM YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Class</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="student.class">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Subjects</ion-label>
+      <ion-select multiple="true" cancelText="Nah" okText="Okay!" [(ngModel)]="student.subjects">
+        <ion-select-option value="English">english</ion-select-option>
+        <ion-select-option value="Maths">maths</ion-select-option>
+        <ion-select-option value="Science">science</ion-select-option>
+        <ion-select-option value="Social">social</ion-select-option>
+        <ion-select-option value="Computer">computer</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Teacher</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="student.teacher">
+        <ion-select-option value="Vivek">Vivek</ion-select-option>
+        <ion-select-option value="Rashmi">Rashmi</ion-select-option>
+      </ion-select>
+    </ion-item>
+		<ion-item>
+		<ion-label position="floating">Address: </ion-label>
+			<ion-input placeholder="address" [(ngModel)]="student.address"></ion-input>
+		</ion-item>
+		
+		<ion-button shape="round" expand="full" (click)="addStudent(student)"><b>Add student</b></ion-button>
+	</ion-content>
+
